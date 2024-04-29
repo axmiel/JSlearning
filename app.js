@@ -165,7 +165,7 @@ const obj1 = {
     num : 2,
     bool1 : true,
     arr : arr,
-//keys can also be nested within quotation marks
+//keys must be nested within quotation marks if individual words are not joined with an underscore
     'another key' : 'this is another key'
 };
 //specific items within objects can be called in two ways:
@@ -187,3 +187,33 @@ console.log(obj1);
 //    lesson 5 - function expression and declaration
 //    ##########################################################
 alert("lesson 5 - function expression and declaration");
+
+//Two ways to create functions - function expressions: similar to variable assignment by using the keyword 'function')
+//                              - function declaration: using the keyword function 
+//Function expressions - similar to creating variables, the meta is to use const to ensure function is immutable
+//Function expressions do not get hoisted - function expression can only be invoked once it has been created
+//Trying to invoke a function expression before it was created results in an error
+
+const addAndLog = function(arg1, arg2){
+    console.log("the sum of numbers " + arg1 + " and " + arg2 + " is: " + (arg1 + arg2));
+}
+
+//Once function expression has been created in can be invoked 
+addAndLog(3, 5);
+addAndLog(5, 2);
+addAndLog(12341, 9838);
+
+console.log(multiply(4, 8));
+console.log("the multiplication function declaration used above has been created below this line");
+
+//Function declarations get hoisted to the top of their scope and can be called on ***before*** they were declared - above we invoke the function that is declared below
+function multiply(arg1, arg2){
+    return arg1 * arg2;
+}
+
+//Function expressions can be invoked as soon as they are created
+//These are called IIFE (immediately invoked function expressions)
+//A function declaration is wrapped in rounded brackets and followed immediately by another set of rounded brackets
+(function() {
+    console.log("This is an IIFE");
+})();
