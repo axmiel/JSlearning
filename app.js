@@ -40,7 +40,6 @@ alert("prompt() displays an alert that takes in user input");
 console.log("prompt() input can be stored in a variable");
 let is used to declare mutable variables
 let name = prompt("this is a prompt(), the input will be assigned to a variable 'name'");
-let name = 'artur';
 let hour = 12;
 let minute = 30;
 //strings can be concatenated together, variables also. 
@@ -120,7 +119,7 @@ alert("lesson 4 - Arrays and Objects Storing values within object");
 //arrays are ordered collections of comma-separated values contained between square brackets
 const arr = ['one', true, 3, [1, 2, 3], 5];
 console.log(arr);
-//individual items from an arrays can be called upon by suffixing the name of the array with square brackets
+//individual items from an array can be called upon by suffixing the name of the array with square brackets
 //and specifying the index number of the item from the array. the computers count from 0, so the first item in array has index 0
 console.log(arr[3]);
 
@@ -137,7 +136,7 @@ console.log(arr[6]);
 console.log("array length: ", arr.length); 
 //push() - adds a new item to the end of the array
 arr.push('last item');
-//pop() - removes the last item from the array. the popped value can be assign to a variable and reused in the code
+//pop() - removes the last item from the array. the popped value can be assigned to a variable and reused in the code
 let val = arr.pop();
 console.log("removed: ", val);
 //unshift() - adds new value to the start
@@ -155,7 +154,7 @@ arr2[3] = 'NEW VALUE TEST';
 console.log(arr);
 
 //OBJECTS are another way of storing multiple values in the same variable, they are unordered and contained within {} squiggly brackets
-//like arrays, objects only references locations in the memory
+//like arrays, objects only reference locations in the memory
 //objects are created with key:value pairs and don't use indexes, to call on a value, you would use a key instead
 //keys must be unique, if the same key is mentioned multiple times, then upon calling it, the latest assigned value will be used
 const obj1 = {
@@ -188,32 +187,55 @@ console.log(obj1);
 //    ##########################################################
 alert("lesson 5 - function expression and declaration");
 
-//Two ways to create functions - function expressions: similar to variable assignment by using the keyword 'function')
-//                              - function declaration: using the keyword function 
-//Function expressions - similar to creating variables, the meta is to use const to ensure function is immutable
-//Function expressions do not get hoisted - function expression can only be invoked once it has been created
-//Trying to invoke a function expression before it was created results in an error
+//Two ways to create functions - function expressions
+//                              - function declaration
+//When a block of code is run in a function it is not complete until it returns a value
 
-const addAndLog = function(arg1, arg2){
-    console.log("the sum of numbers " + arg1 + " and " + arg2 + " is: " + (arg1 + arg2));
+
+//FUNCTION EXPRESSIONS
+//- similar to creating variables, the meta is to use const to ensure function is immutable
+//- function expressions do not get hoisted - function expression can only be invoked once it has been created
+//- trying to invoke a function expression before it was created results in an error
+const funExpression1 = function(arg1, arg2){
+    console.log("the sum of numbers " + arg1 + " and " + arg2 + " is: " + (arg1 + arg2))
 }
+funExpression1(3, 5);
+funExpression1(5, 2);
+funExpression1(12341, 9838);
 
-//Once function expression has been created in can be invoked 
-addAndLog(3, 5);
-addAndLog(5, 2);
-addAndLog(12341, 9838);
+//the above function expression can be re-written using an arrow format
+const arrowFun = (arg1, arg2) => {
+    console.log("arrow function ", arg1, " + ", arg2, " = ", (arg1 + arg2))
+}
+arrowFun(1, 2);
 
+//and even shorter arrow format
+const shorterArrowFun = () => console.log("shorter arrow function");
+shorterArrowFun();
+
+
+//function expressions can be invoked as soon as they are created
+//these are called IIFE (immediately invoked function expressions)
+//IIFE functions are single-use only - cannot be reused later in the code
+(function(){
+    console.log('classic IIFE')
+})(); //once created add the (); at the end to immediately invoke 
+//in arrow format
+(() => {
+    console.log('arrow function IIFE');
+})(); 
+//in shorter arrow format
+(() => console.log('short arrow function IIFE'))();
+
+
+
+//FUNCTION DECLARATIONS
+//- get hoisted to the top of their scope and can be called on ***before*** they were declared - above we invoke the function that is declared below
+
+//the below line is calling a **declared** function
 console.log(multiply(4, 8));
-console.log("the multiplication function declaration used above has been created below this line");
 
-//Function declarations get hoisted to the top of their scope and can be called on ***before*** they were declared - above we invoke the function that is declared below
 function multiply(arg1, arg2){
-    return arg1 * arg2;
+    return arg1 * arg2
 }
 
-//Function expressions can be invoked as soon as they are created
-//These are called IIFE (immediately invoked function expressions)
-//A function declaration is wrapped in rounded brackets and followed immediately by another set of rounded brackets
-(function() {
-    console.log("This is an IIFE");
-})();
