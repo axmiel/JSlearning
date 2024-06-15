@@ -181,7 +181,7 @@ console.log(obj1);
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-
+/*
 //    ##########################################################
 //    lesson 5 - function expression and declaration
 //    ##########################################################
@@ -200,8 +200,6 @@ const funExpression1 = function(arg1, arg2){
     console.log("the sum of numbers " + arg1 + " and " + arg2 + " is: " + (arg1 + arg2))
 }
 funExpression1(3, 5);
-funExpression1(5, 2);
-funExpression1(12341, 9838);
 
 //the above function expression can be re-written using an arrow format
 const arrowFun = (arg1, arg2) => {
@@ -210,22 +208,24 @@ const arrowFun = (arg1, arg2) => {
 arrowFun(1, 2);
 
 //and even shorter arrow format
-const shorterArrowFun = () => console.log("shorter arrow function");
-shorterArrowFun();
+const shorterArrowFun = (arg1) => console.log("shorter arrow function with argument " + arg1);
+shorterArrowFun('"hello"');
 
 
 //function expressions can be invoked as soon as they are created
 //these are called IIFE (immediately invoked function expressions)
 //IIFE functions are single-use only - cannot be reused later in the code
-(function(){
-    console.log('classic IIFE')
-})(); //once created add the (); at the end to immediately invoke 
+(function(a, b){
+    console.log('classic IIFE with args: ', a, b)
+})('arg1', 'arg2'); //once created add the (); at the end to immediately invoke 
+
 //in arrow format
-(() => {
-    console.log('arrow function IIFE');
-})(); 
+((arg1) => {
+    console.log('arrow function IIFE with arg: ', arg1);
+})('kek'); 
+
 //in shorter arrow format
-(() => console.log('short arrow function IIFE'))();
+((poppy) => console.log('short arrow function IIFE', poppy))('poppy');
 
 
 
@@ -239,3 +239,54 @@ function multiply(arg1, arg2){
     return arg1 * arg2
 }
 
+*/
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+//    ######################################################
+//    lesson 6 - Conditions, If statements and Switch Ternary Operator
+//    ######################################################
+alert("Lesson 6 - Conditions, If statements and Switch Ternary Operator");
+
+//Conditions allow to apply logic to the code
+//There is the classic if/else if/else statement that runs the code if the condition is met
+let myValue = 3;
+if (myValue == 1) {
+    console.log('if condition is met: run this block')
+} else if (myValue == 2) {
+    console.log('else if condition is met: run this');
+} else {
+    console.log('neither conditions are met (covers all other scenarios): do this if all else fails');
+}
+
+//Switch statements allow to check on various cases and see if a condition meets the criteria we're looking for
+
+function checker(val) {
+    let message;
+    switch(val){
+        case 0:
+            message = val + (' meets the first criteria (0)');
+            break;
+        case 1:
+            message = val + ' meets the second criteria (1)';
+            break;
+        case 2:
+            message = ' meets the third criteria (2)';
+            break;
+        default:
+            message = val + " doesn't meet the criteria";
+    }
+    return message;
+}
+
+console.log(checker(1));
+
+//The ternary operator let's us assign a variable based on predefined conditions
+//It operates similiarly to how it does in Java
+//const variableName = (condition) ? assignedIfTrue : assignedIfFalse;
+
+const anotherVariable = (myValue > 2) ? 'statement is true' : 'statement is false';
+console.log(anotherVariable);

@@ -1,1 +1,27 @@
+* {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
 
+.header {
+    text-align: center;
+    padding: 25px;
+    background-color: rgb(21, 21, 56);
+}
+
+.headerTitle {
+    color: gainsboro;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 60px;
+    text-transform: uppercase;
+    padding: 10px 0px 10px;
+}
+
+.headerIntro {
+    color: gainsboro;
+    font-size: 18px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 0px 0px 2px rgb(46, 46, 46);
+}
