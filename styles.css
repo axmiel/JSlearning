@@ -7,7 +7,7 @@
 .header {
     text-align: center;
     padding: 25px;
-    background-color: rgb(21, 21, 56);
+    background-color: hsl(165, 62%, 15%);
 }
 
 .headerTitle {
@@ -15,7 +15,7 @@
     font-family:Arial, Helvetica, sans-serif;
     font-weight: bolder;
     font-size: 60px;
-    text-transform: uppercase;
+    text-shadow: 4px 4px hsl(0, 0%, 0%);
     padding: 10px 0px 10px;
 }
 
@@ -23,5 +23,24 @@
     color: gainsboro;
     font-size: 18px;
     font-family:Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 0px 0px 2px rgb(46, 46, 46);
+    text-shadow: 2px 2px rgb(0, 0, 0);
+}
+
+.navigation {
+    background-color: hsl(165, 60%, 18%);
+}
+
+.navigation ul {
+    display: flex;
+    flex-flow: row;
+    list-style: none;
+    position: sticky;
+}
+
+.navigation li {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: gainsboro;
+    text-shadow: 2px 2px hsl(0, 0%, 0%);    
+    padding: 10px 30px 10px;
 }
