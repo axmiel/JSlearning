@@ -245,13 +245,15 @@ function multiply(arg1, arg2){
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-
+/*
 //    ######################################################
 //    lesson 6 - Conditions, If statements and Switch Ternary Operator
 //    ######################################################
 alert("Lesson 6 - Conditions, If statements and Switch Ternary Operator");
 
 //Conditions allow to apply logic to the code
+
+//IF / ELSE IF / ELSE
 //There is the classic if/else if/else statement that runs the code if the condition is met
 let myValue = 3;
 if (myValue == 1) {
@@ -262,7 +264,8 @@ if (myValue == 1) {
     console.log('neither conditions are met (covers all other scenarios): do this if all else fails');
 }
 
-//Switch statements allow to check on various cases and see if a condition meets the criteria we're looking for
+//SWITCH STATEMENTS
+//switch statements allow to check on various cases and see if a condition meets the criteria we're looking for
 
 function checker(val) {
     let message;
@@ -284,9 +287,145 @@ function checker(val) {
 
 console.log(checker(1));
 
+
+//TERNARY OPERATOR
 //The ternary operator let's us assign a variable based on predefined conditions
 //It operates similiarly to how it does in Java
 //const variableName = (condition) ? assignedIfTrue : assignedIfFalse;
 
 const anotherVariable = (myValue > 2) ? 'statement is true' : 'statement is false';
 console.log(anotherVariable);
+
+*/
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+/*
+//    ######################################################
+//    lesson 7 - Loops
+//    ######################################################
+alert('lesson 7 - Loops');
+
+//Loops provide a way to run the code multiple times
+
+//FOR LOOP
+//The structure of the FOR loop is as below
+//  for(expression 1; expression 2; expression 3) {
+//      //code block to be executed with each iteration of the loop
+//  }
+console.log('this is an example for loop');
+for(let i=0;i<5;i++) {
+    console.log('loop iteration ' + i);
+}
+
+//for - keyword indicating the start of the loop
+//expression 1 - optional, initialises a variable used in the loop before the loop starts (e.g. i = 0 - a counter variable)
+//multiple values can be initiated within the first expression
+console.log('this is an example for loop with multiple "first expressions" initialised');
+for(let i = 0, myarr = [0, 1, 2, 3, 4]; i < myarr.length; i++) {
+    console.log('the ' + i + ' item in myarr is ' + myarr[i]);
+}
+
+
+//if expression 1 is omitted, e.g. if using variables initiated before the loop
+let counterVariable = 0;
+
+console.log('counterVariable value: ' + counterVariable);
+
+for(; counterVariable < 4; counterVariable++) {
+    console.log('counterVariable initiad before the loop started ' + counterVariable);
+}
+
+console.log('need to be careful with using existing variables as they will get overwritten: ' + counterVariable);
+
+
+//expression 2 - optional, usually used to evaluate the condition of the variable - if the expression returns true the loop will execute again, if false the loop ends
+//if expression 2 is omitted then a break statement must be used within the loop, otherwise the loop would go on indefinitely 
+console.log('loop with expression 2 skipped')
+for(let i=0; ; i++) {
+    console.log(i);
+    if (i == 3) {
+        break;
+    }
+}
+
+
+//expression 3 - optional, usually use to increment the value of the initial variable, but can be used to do anything else
+console.log('loop with expression 3 not being a steady increment');
+for(let i = 20; i > 10; i -= 9){
+    console.log(i);
+}
+//expression 3 can be omitted if there is a counter variable used within the loop
+console.log('for loop with expressions 2 and 3 omitted');
+for(let i=0; ;) {
+    console.log(i);
+    i++;
+    if (i == 3) {
+        console.log('loop terminates at i = ' + i);
+        break;
+    }
+}
+
+
+//WHILE LOOPS
+//Execute the block of code as long as the condition is true
+let anotherCounter = 0;
+
+while(anotherCounter < 4) {
+    console.log('iteration ' + anotherCounter + ' of the while loop');
+    anotherCounter += 1;
+}
+
+
+//DO-WHILE LOOPS
+//Execute a block of code once, then, if the 'while' condition is true, executes until the condition fails - if the 'while' condition fails immediately, stops executing
+anotherCounter = 1;
+do {
+    console.log('do while loop execution ', anotherCounter);
+    anotherCounter++;
+}
+while(anotherCounter < 1);
+
+
+//Loops are useful for iterating through items in the arrays
+const arr = ['Arthur', 'Phoebe', 'Cat', 1234, 12.3];
+
+console.log('for loop iterating over the array items');
+for(let i = 0; i < arr.length; i++) {
+    console.log(arr[i]); //logs array item at index [i]
+}
+
+console.log('while loop iterating over the array items');
+let i = 0;
+while(i < arr.length) {
+    console.log(arr[i]);
+    i++;
+}
+
+
+//There is a specific method for looping items through an array - forEach()
+
+//For value of array or string
+let str = 'Arthur';
+for(val of str) {
+    console.log(val + " of str");
+}
+
+//For key in object
+const obj = {firstName:'Arthur', lastName:'Guy', age:30, networth:0};
+for(key in obj) {
+    console.log(key, obj[key]);
+}
+*/
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+//    ######################################################
+//    lesson 7 - Array methods
+//    ######################################################
+alert('lesson 7 - Array methods');
