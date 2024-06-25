@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
+    let numberOfButtons = randomNumber(100,200);
+
+    function randomNumber(min, max) {
+        const minCeiled = Math.ceil(min);
+        const maxFloored = Math.floor(max);
+        return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled)
+    }
+    
+    const contentSection = document.querySelector(".content");
+
+    for (i=0; i<numberOfButtons; i++) {
+        const element = document.createElement("button")
+        const node = document.createTextNode("Button " + i);
+        element.append(node);
+        element.setAttribute("class", "button");
+        contentSection.append(element);
+    }
+
     const buttons = document.querySelectorAll("button");
 
     for (i=0; i<buttons.length; i++) {
@@ -21,3 +39,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
