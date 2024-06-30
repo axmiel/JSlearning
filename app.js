@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let numberOfButtons = randomNumber(10, 25);
+    let numberOfButtons = randomNumber(1, 25);
 
     function randomNumber(min, max) {
         const minCeiled = Math.ceil(min);
         const maxFloored = Math.floor(max);
         return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled)
     }
-    
-    const perf = performance.now()
 
     const contentSection = document.querySelector(".content");
 
@@ -34,7 +32,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         contentSection.append(element);
     }
-
-    console.log('Time to execute: ' + (performance.now() - perf));
 });
 
